@@ -1,0 +1,131 @@
+//@import "./reset";
+//@import "nib/vendor";
+
+@-webkit-keyframes slide-left
+	from
+		-webkit-transform translate3d(-100%, 0, 0)
+		opacity 0
+
+@-webkit-keyframes slide-top 
+	from
+		-webkit-transform translate3d(0, -100%, 0)
+		opacity 0
+
+@-webkit-keyframes fade-in
+	from
+		opacity 0
+
+@-moz-keyframes slide-left
+	from
+		-moz-transform translate(-100%, 0)
+		opacity 0
+
+@-moz-keyframes slide-top 
+	from
+		-moz-transform translate(0, -100%)
+		opacity 0
+
+@-moz-keyframes fade-in
+	from
+		opacity 0
+
+border-radius()
+	-webkit-border-radius arguments
+	-moz-border-radius arguments
+	-ms-border-radius arguments
+	-o-border-radius arguments
+	border-radius arguments
+
+
+box-sizing()
+	-webkit-box-sizing arguments
+	-moz-box-sizing arguments
+	-ms-box-sizing arguments
+	-o-box-sizing arguments
+	box-sizing arguments
+
+box()
+	display -webkit-box
+	display -moz-box
+	display -ms-box
+	display -o-box
+	display box
+
+box-flex()
+	-webkit-box-flex 1
+	-moz-box-flex 1
+	-ms-box-flex 1
+	-o-box-flex 1
+	box-flex 1
+
+box-shadow()
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	-ms-box-shadow arguments
+	-o-box-shadow arguments
+	box-shadow arguments
+
+animation()
+	-webkit-animation arguments
+	-moz-animation arguments
+
+transition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-ms-transition arguments
+	-o-transition arguments
+	transition arguments
+
+body 
+	background #1A1B1F
+
+
+body > .container
+	margin-top 60px
+	margin-bottom 20px
+	box()
+	
+	.sidebar
+		width 350px
+		margin 20px 0
+		background #252429
+		box-sizing(border-box)
+		padding 10px 20px
+		border-radius(0 10px 10px 0)
+		box-shadow(0 0 20px rgba(0, 0, 0, 0.8))
+		z-index 1
+		position relative
+		animation(slide-left .8s .8s both)
+
+		h6
+			line-height 23px
+			margin 5px 0
+
+	.principal
+		padding 20px
+		box-flex(1)
+		background #FAFAFA
+		border-radius(8px 5px 5px 8px)
+		box-shadow(0 0 20px rgba(0, 0, 0, .8))
+		z-index 2
+		position relative
+		animation(slide-top .5s both)
+
+		blockquote
+			margin 30px 0
+			animation(fade-in .5s .8s both)
+			transition(all .4s)
+
+			small
+				transition(color .4s)
+
+			&.brandnew
+				animation(slide-top .5s both ease-out)
+
+			&:hover
+				border-left-color gray
+				color black
+
+				small
+					color gray
+

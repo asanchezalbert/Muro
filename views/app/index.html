@@ -1,0 +1,38 @@
+<Head:>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" />
+
+<Title:>
+  @{{_wall.nombre}}'s Wall
+
+<Body:>
+  <div class="topbar-wrapper">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><a href="#"> @{{_wall.nombre}}'s Wall</a></h3>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div class="container">
+    <div class="principal">
+      <form x-bind="submit:publicar">
+        <p><input type="text" class="xxlarge" value="((_nuevaPublicacion))" /></p>
+        <p><input class="btn" value="Publicar" type="submit" /></p>
+      </form>
+      <div class="publicaciones">((_wall.publicaciones > publicacion))</div>
+    </div>
+
+    <div class="sidebar">
+      <h6>Experimento de aplicación realtime con Derby.</h6>
+    </div>
+  </div>
+
+<publicacion:>
+  <blockquote>
+    <p>{{.texto}}</p>
+    <small>{{.fecha}}</small>
+  </blockquote>
+
+<Scripts:>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
